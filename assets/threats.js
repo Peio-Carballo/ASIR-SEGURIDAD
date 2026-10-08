@@ -22,6 +22,6 @@
   document.querySelectorAll('.demo, .takeaway').forEach(el=>reveal.observe(el));
   const button=document.getElementById('motion-toggle'),reduced=matchMedia('(prefers-reduced-motion:reduce)');
   button.hidden=false;let paused=reduced.matches;
-  function motion(){document.documentElement.classList.toggle('reading-paused',paused);button.textContent=paused?'Activar animaciones':'Pausar animaciones';button.setAttribute('aria-pressed',String(paused))}
+  function motion(){document.documentElement.classList.toggle('reading-paused',paused);button.textContent=paused?'Activar animaciones':'Pausar animaciones';button.setAttribute('aria-pressed',String(paused));dispatchEvent(new CustomEvent('threat-motion',{detail:{paused}}))}
   button.addEventListener('click',()=>{paused=!paused;motion()});reduced.addEventListener('change',e=>{paused=e.matches;motion()});motion();
 })();
