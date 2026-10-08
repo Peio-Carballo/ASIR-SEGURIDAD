@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   if (!window.gsap) return; // The original examples remain usable without the player.
-  const pink = '#ff6793', purple = '#b99bff', green = '#a9dfcb';
+  const pink = '#e87899', purple = '#a9a5bd', green = '#94c8ac';
   const duration = 7;
   const players = [];
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
@@ -12,24 +12,24 @@
   const line = (d,color=purple) => `<path class="story-wire" d="${d}" stroke="${color}"/>`;
   const pulse = (d,color=pink,n=4) => `${line(d,color)}<g data-flow="${d}">${Array.from({length:n},()=>`<circle r="4" fill="${color}"/>`).join('')}</g>`;
   const badge = (x,y,text,color=pink) => `<g transform="translate(${x} ${y})"><rect x="-93" y="-15" width="186" height="30" rx="15" fill="#181522" stroke="${color}" stroke-opacity=".55"/>${label(0,5,text,color,12)}</g>`;
-  const laptop = (x,y,title='Tu equipo',accent=purple) => `<g transform="translate(${x} ${y})"><ellipse cx="0" cy="112" rx="115" ry="19" fill="#06060c" opacity=".7"/><path d="M-93 -69 L73 -69 L92 -57 L92 60 L73 73 L-93 73Z" fill="#171526" stroke="#5a4a76"/><path d="M73 -69 L92 -57 L92 60 L73 73Z" fill="#29213b"/><rect x="-84" y="-60" width="148" height="119" rx="5" fill="#0e101b" stroke="${accent}" stroke-opacity=".7"/><rect x="-75" y="-50" width="129" height="15" rx="3" fill="#25223a"/><circle cx="-67" cy="-43" r="2" fill="${pink}"/><circle cx="-59" cy="-43" r="2" fill="${purple}"/><circle cx="-51" cy="-43" r="2" fill="${green}"/><path d="M-93 73 L73 73 L115 97 L-49 113 L-116 91Z" fill="#292438" stroke="#5c4f72"/><path d="M-74 79 L63 79 L84 90 L-53 99Z" fill="#151522"/><path d="M-30 99 L11 95 L24 100 L-17 104Z" fill="#5b4c72"/>${label(0,145,title,accent,15)}</g>`;
-  const server = (x,y,title='La web',accent=purple) => `<g transform="translate(${x} ${y})"><ellipse cx="5" cy="100" rx="76" ry="19" fill="#06060c" opacity=".7"/><path d="M-49 -65 L25 -81 L66 -56 L-8 -38Z" fill="#453553" stroke="#78678d"/><path d="M-49 -65 L-8 -38 L-8 95 L-49 68Z" fill="#211a2e" stroke="#5a426d"/><path d="M-8 -38 L66 -56 L66 77 L-8 95Z" fill="#30213f" stroke="${accent}" stroke-opacity=".7"/>${[0,1,2].map(i=>`<path d="M1 ${-19+i*35} L54 ${-32+i*35} L54 ${-12+i*35} L1 ${1+i*35}Z" fill="#11111d" stroke="#584068"/><circle cx="45" cy="${-17+i*35}" r="3" fill="${accent}"/><path d="M8 ${-7+i*35} L31 ${-13+i*35}" stroke="#736184"/>`).join('')}${label(5,135,title,accent,15)}</g>`;
-  const envelope = (x,y) => `<g transform="translate(${x} ${y})"><rect x="-57" y="-35" width="114" height="70" rx="9" fill="#30213d" stroke="${pink}" stroke-width="1.5"/><path d="M-55 -29 L0 7 L55 -29 M-55 29 L-18 1 M55 29 L18 1" fill="none" stroke="${pink}"/>${label(0,65,'Un aviso urgente',pink,14)}</g>`;
-  const card = (x,y,title,content,color=purple) => `<g transform="translate(${x} ${y})"><rect x="-83" y="-37" width="166" height="74" rx="10" fill="#1e192c" stroke="${color}" stroke-opacity=".65"/>${label(0,-9,title,color,13)}${label(0,17,content,'#eee7f5',16)}</g>`;
+  const laptop = (x,y,title='Tu equipo',accent=purple) => `<g transform="translate(${x} ${y})"><ellipse cx="0" cy="112" rx="115" ry="19" fill="#06060c" opacity=".7"/><path d="M-93 -69 L73 -69 L92 -57 L92 60 L73 73 L-93 73Z" fill="#25262d" stroke="#5a4a76"/><path d="M73 -69 L92 -57 L92 60 L73 73Z" fill="#303139"/><rect x="-84" y="-60" width="148" height="119" rx="5" fill="#0e101b" stroke="${accent}" stroke-opacity=".7"/><rect x="-75" y="-50" width="129" height="15" rx="3" fill="#25223a"/><circle cx="-67" cy="-43" r="2" fill="${pink}"/><circle cx="-59" cy="-43" r="2" fill="${purple}"/><circle cx="-51" cy="-43" r="2" fill="${green}"/><path d="M-93 73 L73 73 L115 97 L-49 113 L-116 91Z" fill="#303137" stroke="#5e5d69"/><path d="M-74 79 L63 79 L84 90 L-53 99Z" fill="#151522"/><path d="M-30 99 L11 95 L24 100 L-17 104Z" fill="#5b4c72"/>${label(0,145,title,accent,15)}</g>`;
+  const server = (x,y,title='La web',accent=purple) => `<g transform="translate(${x} ${y})"><ellipse cx="5" cy="100" rx="76" ry="19" fill="#06060c" opacity=".7"/><path d="M-49 -65 L25 -81 L66 -56 L-8 -38Z" fill="#484951" stroke="#78678d"/><path d="M-49 -65 L-8 -38 L-8 95 L-49 68Z" fill="#24252b" stroke="#5a426d"/><path d="M-8 -38 L66 -56 L66 77 L-8 95Z" fill="#35363d" stroke="${accent}" stroke-opacity=".7"/>${[0,1,2].map(i=>`<path d="M1 ${-19+i*35} L54 ${-32+i*35} L54 ${-12+i*35} L1 ${1+i*35}Z" fill="#11111d" stroke="#584068"/><circle cx="45" cy="${-17+i*35}" r="3" fill="${accent}"/><path d="M8 ${-7+i*35} L31 ${-13+i*35}" stroke="#736184"/>`).join('')}${label(5,135,title,accent,15)}</g>`;
+  const envelope = (x,y) => `<g transform="translate(${x} ${y})"><rect x="-57" y="-35" width="114" height="70" rx="9" fill="#2d2d34" stroke="${pink}" stroke-width="1.5"/><path d="M-55 -29 L0 7 L55 -29 M-55 29 L-18 1 M55 29 L18 1" fill="none" stroke="${pink}"/>${label(0,65,'Un aviso urgente',pink,14)}</g>`;
+  const card = (x,y,title,content,color=purple) => `<g transform="translate(${x} ${y})"><rect x="-83" y="-37" width="166" height="74" rx="10" fill="#27282f" stroke="${color}" stroke-opacity=".65"/>${label(0,-9,title,color,13)}${label(0,17,content,'#eee7f5',16)}</g>`;
   const shield = (x,y,color=green) => `<g transform="translate(${x} ${y})"><path d="M0 -42 L34 -27 L30 8 Q20 33 0 43 Q-20 33 -30 8 L-34 -27Z" fill="#182b29" stroke="${color}" stroke-width="2"/><path d="M-15 0 L-4 12 L18 -14" stroke="${color}" stroke-width="3" fill="none"/></g>`;
   const bug = (x,y) => `<g transform="translate(${x} ${y})"><ellipse rx="21" ry="29" fill="#411b35" stroke="${pink}" stroke-width="2"/><path d="M-20 -15 L-37 -25 M-22 0 L-40 0 M-20 15 L-37 26 M20 -15 L37 -25 M22 0 L40 0 M20 15 L37 26 M-8 -25 L-16 -40 M8 -25 L16 -40 M0 -20 L0 20" stroke="${pink}" fill="none" stroke-width="2"/><circle cx="-7" cy="-12" r="3" fill="${pink}"/><circle cx="7" cy="-12" r="3" fill="${pink}"/></g>`;
   const eye = (x,y) => `<g transform="translate(${x} ${y})"><path d="M-55 0 Q0 -65 55 0 Q0 65 -55 0Z" fill="#2d1731" stroke="${pink}" stroke-width="2"/><circle r="20" fill="#513152" stroke="${pink}"/><circle r="8" fill="${pink}"/>${label(0,65,'Observa a escondidas',pink,14)}</g>`;
-  const packageBox = (x,y) => `<g transform="translate(${x} ${y})"><path d="M-48 -32 L15 -49 L60 -20 L-4 -1Z" fill="#5b426f" stroke="${purple}"/><path d="M-48 -32 L-4 -1 L-4 67 L-48 33Z" fill="#30213e" stroke="${purple}"/><path d="M-4 -1 L60 -20 L60 47 L-4 67Z" fill="#413054" stroke="${purple}"/><path d="M17 8 L42 1 L48 24 L34 22 L21 31Z" fill="${purple}"/><path d="M26 14 L36 11 M31 8 L31 18" stroke="#282032" stroke-width="2"/>${label(0,99,'GameBoost gratis',purple,15)}</g>`;
+  const packageBox = (x,y) => `<g transform="translate(${x} ${y})"><path d="M-48 -32 L15 -49 L60 -20 L-4 -1Z" fill="#555560" stroke="${purple}"/><path d="M-48 -32 L-4 -1 L-4 67 L-48 33Z" fill="#2c2d34" stroke="${purple}"/><path d="M-4 -1 L60 -20 L60 47 L-4 67Z" fill="#41424a" stroke="${purple}"/><path d="M17 8 L42 1 L48 24 L34 22 L21 31Z" fill="${purple}"/><path d="M26 14 L36 11 M31 8 L31 18" stroke="#282032" stroke-width="2"/>${label(0,99,'GameBoost gratis',purple,15)}</g>`;
   const door = (x,y,color=purple,title='Acceso') => `<g transform="translate(${x} ${y})"><path d="M-23 -39 L23 -39 L23 42 L-23 42Z" fill="#272034" stroke="${color}"/><path d="M-18 -33 L13 -24 L13 40 L-18 35Z" fill="#12131f" stroke="${color}"/><circle cx="7" cy="10" r="2" fill="${color}"/>${label(0,66,title,color,13)}</g>`;
-  const archive = (x,y) => `<g transform="translate(${x} ${y})"><path d="M-57 -46 L32 -46 L57 -24 L57 55 L-57 55Z" fill="#281b33" stroke="${pink}"/><path d="M32 -46 L32 -24 L57 -24" fill="#4a2a46" stroke="${pink}"/><path d="M-25 -10 L25 -10 M-25 4 L25 4 M-25 18 L8 18" stroke="${pink}" stroke-opacity=".7"/>${label(0,84,'Otra persona',pink,15)}</g>`;
+  const archive = (x,y) => `<g transform="translate(${x} ${y})"><path d="M-57 -46 L32 -46 L57 -24 L57 55 L-57 55Z" fill="#2c2d34" stroke="${pink}"/><path d="M32 -46 L32 -24 L57 -24" fill="#4a2a46" stroke="${pink}"/><path d="M-25 -10 L25 -10 M-25 4 L25 4 M-25 18 L8 18" stroke="${pink}" stroke-opacity=".7"/>${label(0,84,'Otra persona',pink,15)}</g>`;
   const definitions = {
     phishing: {
-      title:'Un mensaje. Una trampa.', tag:'01 / EL ENGAÑO', hint:'Sigue el viaje de un aviso falso.',
+      title:'Cómo funciona el phishing', tag:'01 / EL ENGAÑO', hint:'Sigue el viaje de un aviso falso.',
       steps:[
         ['El gancho','Te llega un aviso que parece de tu cuenta. Te mete prisa para que no lo compruebes.'],
         ['La copia','El enlace lleva a una página que imita a la original. El aspecto no demuestra quién está detrás.'],
         ['La consecuencia','Si escribes allí la contraseña, se la entregas a quien ha creado la trampa.'],
-        ['Otra ruta','Abre tú la aplicación oficial y comprueba el aviso por esa vía, sin usar el enlace del mensaje.']
+        ['Comprobar','Abre tú la aplicación oficial y comprueba el aviso por esa vía, sin usar el enlace del mensaje.']
       ],
       art:()=>layer('0 1 2',laptop(145,200))+layer('0',envelope(490,164)+pulse('M445 194 Q310 100 174 183',pink)+badge(488,267,'«Tu cuenta se cierra»'))+
         layer('1 2',server(601,176,'Página falsa',pink)+pulse('M240 188 Q390 100 570 168',pink))+
@@ -38,12 +38,12 @@
         layer('3',laptop(145,200,'Tú decides',green)+server(601,176,'Aplicación oficial',green)+shield(374,188)+pulse('M240 207 L337 207',green)+pulse('M411 207 L566 207',green)+badge(374,298,'Comprueba por otra vía',green))
     },
     dos: {
-      title:'Una web. Demasiadas peticiones.', tag:'02 / LA SATURACIÓN', hint:'Mira qué ocurre cuando ya no puede atender.',
+      title:'Qué pasa durante un DDoS', tag:'02 / LA SATURACIÓN', hint:'Mira qué ocurre cuando ya no puede atender.',
       steps:[
-        ['Todo funciona','Los visitantes envían peticiones y la web tiene capacidad para responder.'],
+        ['Uso normal','Los visitantes envían peticiones y la web tiene capacidad para responder.'],
         ['La avalancha','En este ejemplo, muchos equipos envían peticiones a la vez para saturar el servicio: es un DDoS.'],
         ['No queda sitio','Las peticiones reales esperan o fallan. Saturar una web no significa, por sí solo, robar sus datos.'],
-        ['Filtrar y recuperar','La protección intenta distinguir el tráfico del ataque y dejar pasar a los usuarios reales. No es infalible.']
+        ['Filtrar el ataque','La protección intenta distinguir el tráfico del ataque y dejar pasar a los usuarios reales. No es infalible.']
       ],
       art:()=>layer('0 1 2 3',laptop(120,235,'Un visitante real',green)+server(611,175,'El servicio',purple))+
         layer('0',pulse('M213 219 Q380 162 582 170',green)+badge(400,294,'Hay capacidad',green))+
@@ -54,7 +54,7 @@
         layer('3',[0,1,2].map(i=>pulse(`M${110+i*190} 105 Q${250+i*95} 112 404 156`,pink,3)).join('')+shield(420,190)+pulse('M213 219 Q312 242 385 210',green)+pulse('M457 210 Q531 244 586 190',green)+badge(403,299,'Se filtra el ataque',green))
     },
     troyano: {
-      title:'Lo útil también puede esconder algo.', tag:'03 / LA SORPRESA', hint:'Mira lo que hay detrás de una descarga.',
+      title:'Qué puede esconder un troyano', tag:'03 / LA SORPRESA', hint:'Mira lo que hay detrás de una descarga.',
       steps:[
         ['La promesa','Un programa de una web desconocida promete acelerar tus juegos. Parece justo lo que buscas.'],
         ['Lo ejecutas','El engaño consigue que abras el instalador. La amenaza entra disfrazada de algo útil.'],
@@ -68,7 +68,7 @@
         layer('3',server(160,184,'Fuente oficial',green)+laptop(587,195,'Revisa antes',green)+shield(372,190)+pulse('M222 197 L336 197',green)+pulse('M410 197 L501 197',green))
     },
     backdoors: {
-      title:'Cambias la llave. Queda otra puerta.', tag:'04 / EL ACCESO OCULTO', hint:'Sigue los dos caminos hasta el equipo.',
+      title:'Cómo funciona una puerta trasera', tag:'04 / EL ACCESO OCULTO', hint:'Sigue los dos caminos hasta el equipo.',
       steps:[
         ['La entrada normal','Para acceder normalmente tienes que identificarte y pasar las comprobaciones.'],
         ['La vía escondida','Después de comprometer un equipo, alguien puede dejar otro acceso que se salta esos controles.'],
@@ -83,7 +83,7 @@
         layer('3',door(381,109,green,'Control normal')+shield(384,243)+line('M212 236 Q282 290 350 255',pink)+line('M415 254 Q530 268 594 213',pink)+badge(382,336,'Investigar y eliminar',green))
     },
     spyware: {
-      title:'Tú usas la app. Algo te observa.', tag:'05 / LO QUE NO SE VE', hint:'La actividad parece normal; el seguimiento no.',
+      title:'Qué recoge un programa espía', tag:'05 / LO QUE NO SE VE', hint:'La actividad parece normal; el seguimiento no.',
       steps:[
         ['Todo parece normal','Utilizas una aplicación y navegas. No hay una ventana que avise de que te están observando.'],
         ['Observa','Un programa oculto puede recoger la actividad del dispositivo, según las capacidades que tenga.'],
@@ -91,19 +91,19 @@
         ['Revisar la app','Comprueba de dónde viene y qué permisos pide. Si sospechas, revisa el equipo con herramientas de seguridad.']
       ],
       art:()=>layer('0 1 2',laptop(169,202,'Tu actividad'))+
-        layer('0',card(514,157,'LA APP','Todo funciona')+line('M271 210 Q391 170 431 161',purple))+
+        layer('0',card(514,157,'LA APP','Uso normal')+line('M271 210 Q391 170 431 161',purple))+
         layer('1 2',eye(526,155)+pulse('M263 205 Q370 113 473 155',pink))+
         layer('1',badge(517,283,'Sin aviso visible'))+
         layer('2',card(430,276,'PÁGINAS Y TEXTO','Actividad ficticia',pink)+pulse('M507 204 Q502 244 450 244',pink)+archive(668,270)+pulse('M517 281 L606 281',pink,4))+
         layer('3',laptop(169,202,'Revisa tu equipo',green)+shield(400,177)+card(606,160,'PERMISOS','Solo los necesarios',green)+pulse('M269 207 L361 188',green)+badge(497,297,'Origen + permisos',green))
     },
     stealers: {
-      title:'El equipo funciona. Los datos salen.', tag:'06 / EL ROBO', hint:'No solo les interesa tu contraseña.',
+      title:'Qué intenta robar un stealer', tag:'06 / EL ROBO', hint:'No solo les interesa tu contraseña.',
       steps:[
         ['Datos guardados','Tu navegador puede guardar contraseñas y mantener cuentas abiertas. Son datos valiosos.'],
         ['Los reúne','Un stealer intenta recoger contraseñas, datos de pago o sesiones a las que consiga acceder.'],
         ['Se los lleva','Envía los datos a otra persona. Una sesión robada puede permitir acceder sin escribir otra vez la contraseña.'],
-        ['Actuar desde un equipo seguro','Revisa el equipo afectado. Desde uno seguro, cambia las contraseñas y cierra las sesiones de tus cuentas.']
+        ['Qué hacer después','Revisa el equipo afectado. Desde uno seguro, cambia las contraseñas y cierra las sesiones de tus cuentas.']
       ],
       art:()=>layer('0 1 2',laptop(120,204,'Tu navegador'))+
         layer('0 1',card(426,88,'CONTRASEÑAS','••••••••',purple)+card(426,200,'DATOS DE PAGO','•••• 1234',purple)+card(426,312,'SESIONES','Cuenta abierta',purple))+
@@ -127,8 +127,8 @@
       <div class="story-stage"><span class="stage-corner">S/A. <span>/ ESCENA ${String(index+1).padStart(2,'0')}</span></span>
       <svg class="story-svg" viewBox="0 0 760 410" role="img" aria-labelledby="${id}-scene-title ${id}-scene-description">
         <title id="${id}-scene-title">${esc(story.title)}</title><desc id="${id}-scene-description">${esc(story.steps[0][1])}</desc>
-        <defs><radialGradient id="${id}-halo"><stop stop-color="#643054" stop-opacity=".32"/><stop offset="1" stop-color="#111119" stop-opacity="0"/></radialGradient><pattern id="${id}-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#bb8ddd" stroke-opacity=".055"/></pattern></defs>
-        <rect width="760" height="410" fill="url(${location.href.split('#')[0]}#${id}-grid)"/><ellipse cx="388" cy="219" rx="355" ry="185" fill="url(${location.href.split('#')[0]}#${id}-halo)"/>
+        <defs><radialGradient id="${id}-halo"><stop stop-color="#17181c" stop-opacity=".32"/><stop offset="1" stop-color="#111119" stop-opacity="0"/></radialGradient><pattern id="${id}-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#bb8ddd" stroke-opacity=".055"/></pattern></defs>
+        
         <g class="story-camera">${story.art()}</g>
       </svg><div class="story-stage-footer"><span><i class="stage-dot"></i> Ejemplo ficticio</span><span class="stage-counter">01 / 04</span></div></div>
       <div class="story-caption"><span class="caption-index">01</span><div><h4>${story.steps[0][0]}</h4><p>${story.steps[0][1]}</p></div></div>
@@ -201,6 +201,7 @@
     }
     function render() {
       const step = Math.min(3,Math.floor(clock.time/duration));
+      const changed = step !== current;
       setPhase(step,playing);
       scrub.value = String(clock.time);
       const progress = (clock.time%duration)/duration;
@@ -214,6 +215,15 @@
           dot.setAttribute('opacity',t<.08?t/.08:t>.9?(1-t)/.1:1);
         });
       });
+      if (changed) {
+        // Frame the visible illustration, rather than shrinking a large empty canvas.
+        const boxes = phaseGroups.filter(group => group.dataset.phases.split(' ').includes(String(step))).map(group => group.getBBox());
+        const left = Math.min(...boxes.map(box => box.x));
+        const top = Math.min(...boxes.map(box => box.y));
+        const right = Math.max(...boxes.map(box => box.x + box.width));
+        const bottom = Math.max(...boxes.map(box => box.y + box.height));
+        temporarySvg.setAttribute('viewBox', `${left-22} ${top-16} ${right-left+44} ${bottom-top+32}`);
+      }
     }
     function buttonState() {
       play.classList.toggle('is-playing',playing);
