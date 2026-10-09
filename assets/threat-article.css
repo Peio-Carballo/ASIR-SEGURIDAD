@@ -1,0 +1,37 @@
+/* A short video followed by a straightforward article. */
+html:has(.threat-page) { scroll-behavior: auto; }
+.threat-content { max-width: 1080px; }
+.threat-hero-grid img, .takeaway img { height: auto; }
+.article-video { padding: 45px 0 35px; border-bottom: 1px solid #d6d2d6; }
+.article-video h2 { margin: 0 0 12px; font-size: clamp(25px, 3vw, 34px); font-weight: 500; line-height: 1.2; }
+.article-video > p { max-width: 720px; font-size: 17px; line-height: 1.7; color: #5f5c63; }
+.video-frame { width: min(100%, 680px, calc((100svh - 230px) * 16 / 9)); aspect-ratio: 16 / 9; margin-top: 22px; background: #111115; }
+.video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+.article-video .video-credit { font-size: 13px; margin: 12px 0 0; }
+.video-credit a { text-underline-offset: 3px; }
+.threat-page .concept { display: block; padding: 40px 0 25px; scroll-margin-top: 35px; }
+.concept-copy { max-width: 800px; }
+.concept h2 { font-size: clamp(32px, 4vw, 44px); margin: 10px 0 16px; }
+.concept-copy .concept-lead { font-size: 22px; }
+.concept-copy p { margin-bottom: 15px; }
+.concept-copy .my-take { padding-left: 16px; }
+.threat-page .takeaway { grid-template-columns: 110px 1fr; gap: 30px; padding: 45px 0; }
+.takeaway h2 { font-size: 32px; }
+.takeaway p { font-size: 17px; }
+.threat-page .article-sources { padding: 35px 0 60px; }
+.news-brief { margin: 24px 0 8px; padding: 18px 0 0; border-top: 1px solid #d6d2d6; }
+.concept-copy .news-meta { font-size: 12px; line-height: 1.6; color: #777078; margin-bottom: 8px; }
+.news-brief h3 { margin: 0 0 8px; font-size: 19px; line-height: 1.35; font-weight: 500; color: #242128; }
+.concept-copy .news-brief > p:not(.news-meta) { font-size: 15px; line-height: 1.7; margin-bottom: 8px; }
+.news-link { display: inline-block; padding: 8px 0; font-size: 13px; color: #a21443; text-underline-offset: 4px; }
+@media (max-width: 650px) {
+  .threat-hero h1 { font-size: clamp(43px, 12vw, 59px); }
+  .article-video { padding-top: 30px; }
+  .article-video > p { font-size: 16px; }
+  .video-frame { width: 100%; }
+  .threat-page .concept { padding-top: 32px; scroll-margin-top: 20px; }
+  .concept h2 { font-size: 34px; }
+  .concept-copy .concept-lead { font-size: 21px; }
+  .threat-page .takeaway { display: block; }
+  .takeaway img { display: none; }
+}
