@@ -20,3 +20,9 @@ Cada amenaza incluye una noticia o alerta de 2026, un resumen breve y el enlace 
 AMPLIACIÓN — 9 OCTUBRE 2026
 Añadidos Koobface, botnet y ataque de fuerza bruta a Amenazas sin tecnicismos.
 Nueva entrada articulos/wannacry/: descripción del ataque de 2017, impacto mundial y en España, características y reflexión personal, con fuentes primarias. Enlazada desde la portada y desde el artículo de amenazas. Incluye una precisión sobre las centrifugadoras de Stuxnet en la planta de enriquecimiento de Natanz.
+
+CORRECCIÓN DE CARGA DE ESTILOS — 15 OCTUBRE 2026
+WannaCry solicita una versión nueva de site.css, threat-article.css y site.js para evitar que el navegador conserve archivos antiguos de versiones anteriores. Sustituye articulos/wannacry/index.html y asegúrate de tener también los archivos actualizados de assets/ del ZIP. Tras la subida puedes recargar con Ctrl+F5.
+
+FUENTES MÁS ACCESIBLES — 15 OCTUBRE 2026
+La entrada de WannaCry se ha reescrito a partir de dos noticias de RTVE y dos explicaciones de Xataka. Cada dato enlaza a su artículo correspondiente. Se retiran los informes técnicos anteriores y los detalles que no aparecen en las fuentes nuevas. Se conserva la reflexión personal y la corrección de carga de estilos.
