@@ -1,5 +1,15 @@
 /* A short video followed by a straightforward article. */
 html:has(.threat-page) { scroll-behavior: auto; }
+html:has(.case-page) { scroll-behavior: auto; }
+.case-page { background: #f7f7f4; color: #242128; }
+.case-page .article-header h1 em { color: #ff6793; }
+.case-content { max-width: 860px; margin: 0 auto; padding: 45px 5vw 30px; }
+.case-content .cite { color: #a21443; }
+.case-content section { scroll-margin-top: 0; }
+.case-content .case-source-note { font-size: 13px; color: #777078; }
+.case-content .article-sources li { overflow-wrap: anywhere; scroll-margin-top: 0; }
+.case-link { padding: 25px 0; font-size: 18px; line-height: 1.5; }
+.case-link a { color: #a21443; text-underline-offset: 5px; }
 .threat-content { max-width: 1080px; }
 .threat-hero-grid img, .takeaway img { height: auto; }
 .article-video { padding: 45px 0 35px; border-bottom: 1px solid #d6d2d6; }

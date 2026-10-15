@@ -1,0 +1,22 @@
+WEB DE SEGURIDAD — VERSIÓN SENCILLA
+
+Para GitHub Pages
+Extrae el ZIP y copia su contenido en la raíz del repositorio. index.html debe quedar junto a assets/ y articulos/. No necesita npm ni compilación. Las rutas admiten el prefijo del repositorio en GitHub Pages.
+
+Cambios
+Se han retirado las seis animaciones y todos los ejemplos interactivos.
+La entrada Amenazas sin tecnicismos conserva las explicaciones en texto y añade un único vídeo de introducción al malware, publicado por INCIBE:
+https://www.youtube.com/watch?v=11Ww1WF0-0s
+El vídeo está integrado con el reproductor oficial de YouTube, sin reproducción automática. Necesita conexión a Internet. Incluye un enlace para abrirlo directamente en YouTube.
+El reproductor y el texto se adaptan a portátil y móvil.
+Se ha eliminado la entrada de copias de seguridad y su enlace en la portada.
+
+Al actualizar una versión anterior
+Sustituye los archivos y elimina articulos/copias-de-seguridad/, assets/threat-stories.js y assets/threat-stories.css si siguen presentes en el repositorio. El ZIP ya no los contiene.
+
+NOTICIAS — 9 OCTUBRE 2026
+Cada amenaza incluye una noticia o alerta de 2026, un resumen breve y el enlace a la fuente. En phishing se recoge la conexión de una investigación con Bilbao. La puerta trasera se ilustra con una alerta de INCIBE, no con un ataque local confirmado. Las noticias de DDoS y Pegasus se refieren a novedades de investigaciones sobre hechos anteriores.
+
+AMPLIACIÓN — 9 OCTUBRE 2026
+Añadidos Koobface, botnet y ataque de fuerza bruta a Amenazas sin tecnicismos.
+Nueva entrada articulos/wannacry/: descripción del ataque de 2017, impacto mundial y en España, características y reflexión personal, con fuentes primarias. Enlazada desde la portada y desde el artículo de amenazas. Incluye una precisión sobre las centrifugadoras de Stuxnet en la planta de enriquecimiento de Natanz.
